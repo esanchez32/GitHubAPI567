@@ -1,0 +1,28 @@
+# Elena Sanchez
+# Homework Assignment 4a
+
+import requests
+import json
+
+
+def github_repos(userID):
+
+    repositories = requests.get("http://api.github.com/users/" + userID + "/repos")
+    found = json.loads(repositories.content)
+
+
+def github_commits(userID, name):
+
+    commits = requests.get("http://api.github.com/repos" + userID + name + "/commits")
+    found - json.loads(commits.content)
+    length = len(found)
+    return length
+
+
+def run():
+    userID = input("Please enter your GitHub username")
+    print("Repo: " + name + " " + "Number of commits: " + github_commits(userID, name))
+
+
+if __name__ == "__run__":
+    run()
